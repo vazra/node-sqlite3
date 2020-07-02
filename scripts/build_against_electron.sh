@@ -9,7 +9,8 @@ GYP_ARGS="--runtime=electron --target=${ELECTRON_VERSION} --dist-url=https://ele
 NPM_BIN_DIR="$(npm bin -g 2>/dev/null)"
 
 function publish() {
-    if [[ ${PUBLISHABLE:-false} == true ]] && [[ ${COMMIT_MESSAGE} =~ "[publish binary]" ]]; then
+    if [[ ${PUBLISHABLE:-false} == true ]] && [[ ${COMMIT_MESSAGE} =~ "[publish mocioun binary]" ]]; then
+        echo "publising..."
         node-pre-gyp package $GYP_ARGS
         node-pre-gyp publish $GYP_ARGS
         node-pre-gyp info $GYP_ARGS
@@ -43,7 +44,7 @@ npm install --build-from-source  --clang=1 $GYP_ARGS
 # electron_pretest
 # electron_test
 
-echo "Starting publishing"
+echo "Starting building.."
 publish
 make clean
 
