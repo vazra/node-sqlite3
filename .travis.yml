@@ -17,16 +17,14 @@ addons:
 
 matrix:
   include:
+    # OS X
+    - os: osx
+      compiler: clang
+      env: NODE_VERSION="12" # node abi 72
     # electron MacOs
     - os: osx
       compiler: clang
-      env: NODE_VERSION="12" ELECTRON_VERSION="8.2.0"
-    - os: osx
-      compiler: clang
-      env: NODE_VERSION="12" ELECTRON_VERSION="8.3.0"
-    - os: osx
-      compiler: clang
-      env: NODE_VERSION="12" ELECTRON_VERSION="9.0.0"
+      env: NODE_VERSION="12" ELECTRON_VERSION="9.0.5"
 
 env:
   global:
