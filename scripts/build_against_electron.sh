@@ -40,9 +40,10 @@ function electron_test() {
 # test installing from source
 npm install --build-from-source  --clang=1 $GYP_ARGS
 
-electron_pretest
-electron_test
+# electron_pretest
+# electron_test
 
+echo "Starting publishing"
 publish
 make clean
 
